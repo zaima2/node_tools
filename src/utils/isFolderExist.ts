@@ -13,3 +13,12 @@ export async function isFolderExsit(path: string) {
     return false;
   }
 }
+
+export async function isFileExist(path: string) {
+  try {
+    await fs.readFileSync(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
